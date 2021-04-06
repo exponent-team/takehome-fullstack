@@ -39,8 +39,19 @@ To run the tests (not yet implemented), run `npm test`.
 
 ## API Documentation
 
+### **GET `/api/quizzes`**
+
+Returns an array of available quizzes, with title and ID.
+
+**Response**
+
+| Key | Type | Description
+| -- | -- | -- |
+| `id` | `String` | A unique identifier for the quiz, e.g. 'math'
+| `title` | `String` | The human-readable title of the quiz
+
 ### **GET `/api/quizzes/:id`**
-Returns a Quiz data object given a valid quiz ID. Quiz content is available in `data/quizzes.json` which you can use in your implementation.
+Returns a Quiz object to the client given a valid quiz ID, omitting the correct answers. Quiz content is available in `data/quizzes.json` which you can use in your implementation. Returns a 404 if the requested quiz cannot be found.
 
 **Request**
 
@@ -53,7 +64,7 @@ Returns a Quiz data object given a valid quiz ID. Quiz content is available in `
 
 | Key | Type | Description
 | -- | -- | -- |
-| `id` | `String` | A unique identifier for the quiz
+| `id` | `String` | A unique identifier for the quiz, e.g. 'math'
 | `title` | `String` | The human-readable title of the quiz
 | `questions` | `Array<Question>` | An array of multiple choice questions
 
@@ -99,7 +110,7 @@ Handles submitting a quiz attempt and returns a graded result showing which ques
 | `questions` | `{[id: String]: Boolean}` | An object mapping ID of each question to the graded result, where `true` represents a correct answer.
 
 ```json
-// POST /api/quizzes/1/attempt
+// POST /api/quizzes/math/attempt
 {
   "answers": {
     "question_1": "2",
