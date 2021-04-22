@@ -128,7 +128,3 @@ Handles submitting a quiz attempt and returns a graded result showing which ques
   }
 }
 ```
-
-## What you should submit
-
-Please share your private fork with us or send a .zip file over email. If necessary, please provide any additional notes to run or test the application.
