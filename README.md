@@ -19,7 +19,7 @@ You can refer to the documentation below to understand what API endpoints to imp
 
 ## Evaluation
 We'll evaluate your submission on the following criteria:
-* Functionality: Does your solution work as intended and meet the spec for the API? Do you handle errors correctly?
+* Functionality: Does your solution work as intended and meet the spec for the API? Is your code written defensively, i.e., does it handle invalid inputs and errors?
 * Craft: Does your code follow best practices and expected behavior? Is your code easy to read and commented appropriately?
 
 ## Development
